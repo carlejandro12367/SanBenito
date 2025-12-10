@@ -1,0 +1,98 @@
+/*        ESTILO GENERAL         */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e8f5fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*CONTENEDOR PRINCIPAL*/
+.login-container {
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+/* Título principal */
+.titulo {
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #1273ac;
+}
+
+/* Texto de descripción */
+.descripcion {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+/* Caja que envuelve los campos y el botón */
+.login-box {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/*INPUTS*/
+.input-field {
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #1273ac;
+    border-radius: 10px;
+    outline: none;
+}
+
+.input-field:focus {
+    border-color: #0e5d89;
+}
+
+/*LINKS*/
+.links {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #1273ac;
+    font-size: 16px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/*BOTÓN CIRCULAR LOGIN*/
+.btn-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #1273ac;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: 0.3s;
+    opacity: 0.5;
+}
+
+/* No se puede usar mientras esté deshabilitado */
+.btn-circle:disabled {
+    cursor: not-allowed;
+}
+
+/* Cuando los datos están completos */
+.btn-circle:not(:disabled) {
+    opacity: 1;
+}
+
+.btn-circle:hover:not(:disabled) {
+    background-color: #0c557c;
+}

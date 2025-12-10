@@ -1,0 +1,85 @@
+<!-- reserva consulta general: navegación -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva - Consulta General</title>
+    <link rel="stylesheet" href="recursos/style.css">
+</head>
+<body>
+    <div class="container">
+        <!--BARRA LATERAL-->
+        <aside class="sidebar">
+            <h2>San Benito</h2>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="consulta_general.html" class="active">Consulta General</a></li>
+                    <li><a href="odontologia.html">Odontología</a></li>
+                    <li><a href="vacunas.html">Vacunas</a></li>
+                    <li><a href="mis_reservas.html">Mis Reservas</a></li>
+                    <li><a href="reportes.html">Reportes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!--CONTENIDO PRINCIPAL-->
+        <div class="main-content">
+            <header class="header">
+<div class="user-menu" id="userMenu">
+    <span id="txtUsuario" class="user-label"></span>
+    <div class="dropdown hidden" id="userDropdown">
+        <a href="#" id="btnChangePass">Cambiar contraseña</a>
+        <a href="#" id="btnLogout">Cerrar sesión</a>
+    </div>
+</div>
+            </header>
+
+            <section class="presentation reserva">
+                <h1>Ficha para Consulta General</h1>
+
+                <!-- Menús desplegables -->
+                <div class="form-reserva">
+                    <label for="turno">Selecciona un turno:</label>
+                    <select id="turno">
+                        <option value="">-- Selecciona --</option>
+                        <option value="mañana">Mañana (07:00 - 12:00)</option>
+                        <option value="tarde">Tarde (13:00 - 18:00)</option>
+                        <option value="noche">Noche (19:00 - 00:00)</option>
+                    </select>
+
+                    <label for="fecha">Selecciona una fecha:</label>
+                    <input type="date" id="fecha">
+
+                    <label for="ficha">Número de ficha:</label>
+                    <select id="ficha" disabled>
+                        <option value="">-- Selecciona --</option>
+                    </select>
+
+                    <label for="hora">Hora estimada:</label>
+                    <select id="hora" disabled>
+                        <option value="">-- Selecciona --</option>
+                    </select>
+
+                    <button id="btnReservar" disabled>Reservar Ficha</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!--MODAL EMERGENTE-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Reserva Exitosa</h2>
+            <p id="mensajeReserva"></p>
+            <button id="btnCerrarModal">OK</button>
+        </div>
+    </div>
+
+    <script src="jss/session.js"></script>
+
+    <script src="jss/reservas.js"></script>
+
+</body>
+</html>

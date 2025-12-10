@@ -1,0 +1,95 @@
+<!-- página principal: navegación del sistema -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Salud San Benito</title>
+    <link rel="stylesheet" href="recursos/style.css">
+</head>
+<body>
+
+    <!-- Contenedor general -->
+    <div class="container">
+
+        <!-- Barra lateral izquierda -->
+        <aside class="sidebar">
+            <h2>San Benito</h2>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="consulta_general.html">Consulta General</a></li>
+                    <li><a href="odontologia.html">Odontología</a></li>
+                    <li><a href="vacunas.html">Vacunas</a></li>
+                    <li><a href="mis_reservas.html">Mis Reservas</a></li>
+                    <li><a href="reportes.html">Reportes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+
+            <!-- Encabezado superior -->
+<header class="header">
+<div class="user-menu" id="userMenu">
+    <span id="txtUsuario" class="user-label"></span>
+    <div class="dropdown hidden" id="userDropdown">
+        <a href="#" id="btnChangePass">Cambiar contraseña</a>
+        <a href="#" id="btnLogout">Cerrar sesión</a>
+    </div>
+</div>
+</header>
+
+            <!-- Sección de presentación -->
+        <section class="presentation">
+            <h1>Centro de Salud San Benito</h1>
+
+    <!-- Slider con texto sobre la imagen -->
+            <div class="slider">
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+
+        <!-- Texto dentro de la imagen -->
+                <div class="text-overlay">
+                    <p>
+                Bienvenido al sistema de gestión de citas del Centro de Salud San Benito.
+                Este centro ofrece servicios de primer nivel en consulta general, odontología y vacunación,
+                brindando atención integral y comodidad a la comunidad.
+                    </p>
+                    <p>
+                Reserva tu numero de ficha de forma rápida y sencilla, sin filas ni esperas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        </main>
+    </div>
+
+<script src="jss/session.js"></script>
+
+<script>
+// Mostrar usuario en pantalla
+document.addEventListener("DOMContentLoaded", () => {
+    const usuarioRaw = localStorage.getItem("usuario");
+    if (usuarioRaw) {
+        const usuario = JSON.parse(usuarioRaw);
+
+        // Muestra CI + extensión
+        document.getElementById("txtUsuario").textContent =
+            usuario.ci + " " + usuario.extension;
+    }
+});
+
+// Cerrar sesión
+document.getElementById("btnLogout").addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.removeItem("usuario");
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>

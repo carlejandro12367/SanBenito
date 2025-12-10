@@ -1,0 +1,84 @@
+<!-- inicio de sesión: encabezado y descripción -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Centro de Salud San Benito</title>
+    <link rel="stylesheet" href="recursos/login.css">
+</head>
+<body>
+
+<div class="login-container">
+
+    <h1 class="titulo">Centro de Salud San Benito</h1>
+
+    <p class="descripcion">
+        Para hacer su reserva ingrese sus datos o regístrese para empezar a
+        reservar su ficha con la comodidad de su casa.
+    </p>
+
+    <div class="login-box">
+
+        <input type="text" id="ci" placeholder="Carnet de Identidad" class="input-field">
+
+            <select id="extension" class="input-field">
+    <option value="">Ext.</option>
+    <option value="LP">LP</option>
+    <option value="CB">CB</option>
+    <option value="SC">SC</option>
+    <option value="OR">OR</option>
+    <option value="PT">PT</option>
+    <option value="TJ">TJ</option>
+    <option value="CH">CH</option>
+    <option value="BE">BE</option>
+    <option value="PA">PA</option>
+                </select>
+
+            <input type="password" id="password" placeholder="Contraseña" class="input-field">
+
+        <div class="links">
+            <a href="registro.html">Registrarse</a>
+            <a href="#">¿Olvidó su contraseña?</a>
+        </div>
+
+        <!-- Botón circular -->
+        <button id="btnLogin" class="btn-circle" disabled>
+            ➜
+        </button>
+
+    </div>
+</div>
+
+<script>
+    const ci = document.getElementById("ci");
+    const pass = document.getElementById("password");
+    const btn = document.getElementById("btnLogin");
+
+    function validar() {
+        btn.disabled = !(ci.value.trim() && pass.value.trim());
+    }
+
+    ci.addEventListener("input", validar);
+    pass.addEventListener("input", validar);
+</script>
+
+<!-- LOGIN REAL (SQLite backend) -->
+<script src="jss/auth-login.js"></script>
+
+<script>
+  if (localStorage.getItem("usuario_ci")) {
+      // Si YA está logueado, lo mando a dashboard
+      window.location.href = "dashboard.html";
+  }
+</script>
+
+<script>
+  const usuario = localStorage.getItem("usuario");
+  if (usuario) {
+    window.location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>

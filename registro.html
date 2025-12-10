@@ -1,0 +1,86 @@
+<!-- registro de usuario: formulario y validación -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Centro de Salud San Benito</title>
+    <link rel="stylesheet" href="recursos/registro.css">
+</head>
+<body>
+
+<div class="register-container">
+
+    <h1 class="titulo">Registro para Centro de Salud San Benito</h1>
+
+    <form id="formRegistro" class="form-box" autocomplete="off">
+
+        <!-- CARNET + EXTENSIÓN -->
+        <div class="fila">
+            <input type="text" id="ci" class="input-field" placeholder="Carnet de Identidad" maxlength="12">
+
+            <select id="extension" class="select-field">
+                <option value="">Ext.</option>
+                <option value="LP">LP</option>
+                <option value="CB">CB</option>
+                <option value="SC">SC</option>
+                <option value="OR">OR</option>
+                <option value="PT">PT</option>
+                <option value="TJ">TJ</option>
+                <option value="CH">CH</option>
+                <option value="BE">BE</option>
+                <option value="PA">PA</option>
+            </select>
+        </div>
+
+        <!-- NOMBRE -->
+        <input type="text" id="nombre" class="input-field" placeholder="Nombre completo">
+
+        <!-- CORREO -->
+        <input type="email" id="correo" class="input-field" placeholder="Correo electrónico">
+
+        <!-- TELÉFONO -->
+        <input type="text" id="telefono" class="input-field" placeholder="Teléfono" maxlength="8">
+
+        <!-- CONTRASEÑA -->
+        <div class="pass-container">
+            <input type="password" id="pass1" class="input-field" placeholder="Crear contraseña" maxlength="20">
+            <span id="togglePass1" class="ver-pass">👁</span>
+        </div>
+
+        <!-- Requisitos -->
+        <div class="requisitos">
+            La contraseña debe contener:<br>
+            • Mínimo 8 caracteres<br>
+            • Al menos 1 letra<br>
+            • Al menos 1 letra mayúscula<br>
+            • Al menos 1 número<br>
+            • Máximo 20 caracteres
+        </div>
+
+        <!-- BARRA DE SEGURIDAD -->
+        <div class="barra-container">
+            <div id="barra" class="barra"></div>
+        </div>
+
+        <!-- CONFIRMAR CONTRASEÑA -->
+        <div class="pass-container">
+            <input type="password" id="pass2" class="input-field" placeholder="Confirmar contraseña" maxlength="20">
+            <span id="togglePass2" class="ver-pass">👁</span>
+        </div>
+
+        <!-- BOTÓN REGISTRAR -->
+<button type="submit" id="btnRegister" class="register-btn" disabled>Registrar</button>
+
+    </form>
+
+</div>
+
+<!-- VALIDACIONES / UI -->
+<script src="jss/registro.js"></script>
+
+<!-- ENVÍO AL BACKEND -->
+<script src="jss/auth-register.js"></script>
+
+</body>
+</html>

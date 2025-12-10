@@ -1,0 +1,89 @@
+<!-- historial de reservas: últimas 10 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Reservas</title>
+    <link rel="stylesheet" href="recursos/style.css">
+</head>
+<body>
+
+<div class="container">
+    <!--SIDEBAR-->
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="consulta_general.html">Consulta General</a></li>
+                <li><a href="odontologia.html">Odontología</a></li>
+                <li><a href="vacunas.html">Vacunas</a></li>
+                <li><a href="mis_reservas.html">Mis Reservas</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--CONTENIDO PRINCIPAL-->
+    <div class="main-content">
+
+        <!-- Encabezado superior -->
+        <div class="header">
+<div class="user-menu" id="userMenu">
+    <span id="txtUsuario" class="user-label"></span>
+    <div class="dropdown hidden" id="userDropdown">
+        <a href="#" id="btnChangePass">Cambiar contraseña</a>
+        <a href="#" id="btnLogout">Cerrar sesión</a>
+    </div>
+</div>
+        </div>
+
+        <!--SECCIÓN MIS RESERVAS-->
+        <div class="presentation" style="padding: 40px;">
+
+            <h1 style="text-align: center; font-size: var(--font-size-title);">
+                Mis Reservas
+            </h1>
+
+            <p style="text-align:center; font-size: var(--font-size-subtitle); color:#1273ac;">
+                Últimas 10 reservas realizadas
+            </p>
+
+            <!-- Tabla de reservas -->
+            <div style="margin-top: 40px; overflow-x:auto;">
+                <table id="tablaReservas"
+                    style="width: 100%; border-collapse: collapse; font-size: var(--font-size-text);">
+
+                    <thead style="background-color:#1273ac; color:white;">
+                        <tr>
+                            <th style="padding: 12px; border: 1px solid #ddd;">Ficha #</th>
+                            <th style="padding: 12px; border: 1px solid #ddd;">Fecha</th>
+                            <th style="padding: 12px; border: 1px solid #ddd;">Área</th>
+                            <th style="padding: 12px; border: 1px solid #ddd;">Turno</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cuerpoReservas">
+                    </tbody>
+
+                </table>
+            </div>
+
+            <!-- Mensaje cuando no haya reservas -->
+            <p id="noReservas"
+               style="text-align: center; margin-top: 20px; font-size: var(--font-size-text); color: #666;">
+                No tienes reservas registradas.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/SanBenito/jss/mis_reservas.js"></script>
+<script src="jss/session.js"></script>
+
+</body>
+</html>
